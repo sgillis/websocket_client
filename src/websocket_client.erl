@@ -61,13 +61,13 @@ ws_client_init(Handler, Protocol, Host, Port, Path, Args, Opts) ->
                                      {verify, verify_none},
                                      {active, false},
                                      {packet, 0}
-                                    ], 6000);
+                                    ], 130000);
                     gen_tcp ->
                         gen_tcp:connect(Host, Port,
                                         [binary,
                                          {active, false},
                                          {packet, 0}
-                                        ], 6000)
+                                        ], 130000)
                 end,
     {ok, Socket} = case SockReply of
                        {ok, Sock} -> {ok, Sock};
